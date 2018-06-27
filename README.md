@@ -2,7 +2,7 @@
 ## Project Specifications
 **Goal**
 
-    To create a tool that simplifies and stardardizes the creation and management of JSON files used for texts/translations in Unity.
+To create a tool that simplifies and stardardizes the creation and management of JSON files used for texts/translations in Unity.
 
 **Structure**
 - JSON Manager
