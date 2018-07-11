@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -10,9 +10,8 @@ public class Translatable : MonoBehaviour
     public string id;
     public int selected;
     public string[] options;
-    public Text textObject;
 
-    public void getFiles() {
+    public void GetFiles() {
         DirectoryInfo directory = new DirectoryInfo(Application.streamingAssetsPath);
         FileInfo[] info = directory.GetFiles();
         string[] fileNames = new string[info.Length];
@@ -23,15 +22,56 @@ public class Translatable : MonoBehaviour
         options = fileNames;
     }
 
-    public void UpdateJSON(string updateFileName, string fileNameComponent, string textComponent)
+    public void UpdateJSON(string updateFileName, string idNameComponent, string textComponent)
     {
-        file updateFile = new file();
-        updateFile.fileName = fileNameComponent;
-        updateFile.text = textComponent;
+        
+        //updateFile.id = idNameComponent;
+        //updateFile.text = textComponent;
         string filePath = Path.Combine(Application.streamingAssetsPath, updateFileName);
-        string json = JsonUtility.ToJson(updateFile);
-        File.WriteAllText(filePath, json);
+
+
+        if (File.Exists(filePath)) 
+        {
+            string dataAsJson = File.ReadAllText(filePath);
+            rootData root = JsonUtility.FromJson<rootData>(dataAsJson);
+
+            bool idFound = false;
+            //loop through text elements and edit if corresponding id found
+            for (int i = 0; i < root.information.Count; i++) 
+            {
+                info inf = root.information[i];
+                if (inf.id == idNameComponent) 
+                {
+                    Debug.Log(inf.text);
+                    inf.text = textComponent;
+                    Debug.Log(inf.text);
+                    idFound = true;
+                    Debug.Log("found id " + inf.id);
+                    break; //found the ID, break the loop now
+                }
+            }
+
+            // didn't find a matching ID
+            if (!idFound) {
+                // add new info object
+                info addInfo = new info();
+                addInfo.id = idNameComponent;
+                addInfo.text = textComponent;
+                root.information.Add(addInfo);
+            }
+
+            dataAsJson = JsonUtility.ToJson(root);
+            File.WriteAllText(filePath, dataAsJson);
+        } else 
+        {
+            Debug.Log("Error: File not found");
+        }
+
+
+
     }
+
+   
 
 }
 

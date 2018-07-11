@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -15,7 +15,7 @@ public class TranslatableEditor : Editor
         // Call files
         myTarget.id = EditorGUILayout.TextField("ID", myTarget.id);
 
-        myTarget.getFiles();
+        myTarget.GetFiles();
         myTarget.selected = EditorGUILayout.Popup(myTarget.selected, myTarget.options);
 
         if (GUILayout.Button("Update JSON File with Text Component"))

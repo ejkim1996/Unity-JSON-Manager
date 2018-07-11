@@ -11,7 +11,7 @@ public class JSONScriptEditor : Editor {
         JSONScript myTarget = (JSONScript)target;
 
         myTarget.fileName = EditorGUILayout.TextField("File Name", myTarget.fileName);
-
+        
         if(GUILayout.Button("Build JSON File")) {
             myTarget.BuildJSON(myTarget.fileName);
         }
