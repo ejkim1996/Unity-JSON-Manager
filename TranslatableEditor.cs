@@ -9,11 +9,13 @@ using UnityEditor;
 public class TranslatableEditor : Editor
 {
 
+
     public override void OnInspectorGUI()
     {
         Translatable myTarget = (Translatable)target;
         // Call files
         myTarget.id = EditorGUILayout.TextField("ID", myTarget.id);
+        myTarget.text = EditorGUILayout.TextField("Text", myTarget.text);
 
         myTarget.GetFiles();
         myTarget.selected = EditorGUILayout.Popup(myTarget.selected, myTarget.options);
@@ -22,7 +24,8 @@ public class TranslatableEditor : Editor
         {
             // Finds the text component of the Game Object and corresponding file
             string fileNameComponent = myTarget.id;
-            string textComponent = GameObject.Find("SampleGameObject").GetComponent<Text>().text;
+
+            string textComponent = myTarget.text;
             string selectedFile = myTarget.options[myTarget.selected];
 
             myTarget.UpdateJSON(selectedFile, fileNameComponent, textComponent);

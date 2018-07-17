@@ -12,7 +12,7 @@ public class JSONScript : MonoBehaviour {
         string filePath = Path.Combine(Application.streamingAssetsPath, newFileName);
         // Create a new file
         if (!File.Exists(filePath)) {
-            rootData root = new rootData();
+            RootAnimalData root = new RootAnimalData();
 
             string json = JsonUtility.ToJson(root);
 
@@ -28,6 +28,8 @@ public class JSONScript : MonoBehaviour {
     }
 
 }
+
+
 
 [System.Serializable]
 public class rootData

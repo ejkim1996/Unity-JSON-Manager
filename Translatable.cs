@@ -8,8 +8,49 @@ using UnityEngine.UI;
 public class Translatable : MonoBehaviour
 {
     public string id;
+    public string text;
     public int selected;
     public string[] options;
+
+    GameObject textObject;
+
+    public void Start()
+    {
+        textObject = gameObject;
+        Debug.Log(textObject.name + " is currently being worked on");
+        Text objectText = textObject.GetComponent<Text>();
+
+        string fileName = options[selected];
+        string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
+
+        if (File.Exists(filePath))
+        {
+            string dataAsJson = File.ReadAllText(filePath);
+            //Debug.Log(dataAsJson);
+
+            rootData root = JsonUtility.FromJson<rootData>(dataAsJson);
+
+            bool idFound = false;
+            for (int i = 0; i < root.information.Count; i++)
+            {
+                info inf = root.information[i];
+                if (inf.id == id)
+                {
+                    Debug.Log("Text found. Loading . . .");
+                    objectText.text = inf.text;
+                    idFound = true;
+                    break; //found the ID, break the loop now
+                }
+            }
+
+            if (!idFound)
+            {
+                Debug.Log("Could not find the provided ID in the JSON file.");
+            }
+
+        }
+
+    }
 
     public void GetFiles() {
         DirectoryInfo directory = new DirectoryInfo(Application.streamingAssetsPath);
@@ -20,6 +61,8 @@ public class Translatable : MonoBehaviour
             fileNames[i] = Path.GetFileName(info[i].ToString());
         }
         options = fileNames;
+
+
     }
 
     public void UpdateJSON(string updateFileName, string idNameComponent, string textComponent)
@@ -29,6 +72,9 @@ public class Translatable : MonoBehaviour
         //updateFile.text = textComponent;
         string filePath = Path.Combine(Application.streamingAssetsPath, updateFileName);
 
+
+        textObject = gameObject;
+        textObject.GetComponent<Text>().text = textComponent;
 
         if (File.Exists(filePath)) 
         {
