@@ -34,6 +34,7 @@ To create a tool that simplifies and stardardizes the creation and management of
 2) Enter the filename to be used for the JSON file (either with or without the .json extension) in the editor window.
 <img src="images/jsonscript.png" alt="JSONscript example" width="400px"/>
 3) Click the "Build JSON File" button, which will create the file in the StreamingAssets folder.
+<br><br>
 
 **Add Values to a JSON File**
 
@@ -45,6 +46,7 @@ To create a tool that simplifies and stardardizes the creation and management of
 4) Select the JSON file you wish to edit from the dropdown menu.
 <img src="images/newdropdown.png" alt="New info dropdown" width="400px"/>
 5) Click the "Update JSON file with text component" button.
+<br><br>
 
 **Update Values in a JSON File**
 
