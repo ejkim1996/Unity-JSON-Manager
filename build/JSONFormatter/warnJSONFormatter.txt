@@ -1,0 +1,13 @@
+missing module named nt - imported by shutil, os, ntpath, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py
+missing module named 'org.python' - imported by pickle, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py, xml.sax
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py
+missing module named _winreg - imported by platform, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py
+missing module named java - imported by platform, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py
+missing module named 'java.lang' - imported by platform, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py
+missing module named winreg - imported by platform, mimetypes, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py, urllib.request
+missing module named msvcrt - imported by subprocess, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py, getpass
+missing module named _winapi - imported by subprocess, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py
+missing module named _dummy_threading - imported by dummy_threading, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py
+missing module named org - imported by copy, /Users/jonathanwang/JSON Manager/Assets/Scripts/JSONFormatter.py
