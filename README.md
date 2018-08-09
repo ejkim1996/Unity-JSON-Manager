@@ -28,6 +28,17 @@ To create a tool that simplifies and stardardizes the creation and management of
 -------------------------------------------------------------
 ## Usage Instructions
 
+**Users**
+
+Developers can use this tool to add translation functionality to interactives via Unity.
+
+Translators easily add translated text to interactive pieces without using Unity.
+
+**Usage**
+
+1. Developers: Download the project from GitHub.
+2. Open the package in Unity, then double-click TranslatablePackage.unitypackage, which will automatically add the package to the Unity project.
+
 **Create a JSON File**
 
 1. Add the "JSON Manager" prefab into your project hierarchy.
