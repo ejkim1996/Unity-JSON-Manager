@@ -66,6 +66,7 @@ To create a tool that simplifies and stardardizes the creation and management of
 **Update Values in a JSON File**
 
 1. In the "ID" field of the Translatable component, enter the string ID associated with the value you wish to update.
+
 2. In the Text Component field, enter the new text to save in the JSON.
 <img src="images/UpdateExisting.png" alt="Edit existing info" width="400px"/>
 
