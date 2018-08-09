@@ -53,7 +53,7 @@ To create a tool that simplifies and stardardizes the creation and management of
 <img src="images/TranslatableEmpty.png" alt="Blank translatable" width="400px"/>
 
 2. In the "ID" field, enter the string ID you want to associate with the text value.
-<img src="images/Translatable.png" alt="Add new id" width="400px/>
+<img src="images/Translatable.png" alt="Add new id" width="400px"/>
 
 3. Enter the value you would like to add in the "Text" component field.
 <img src="images/TranslatableText.png" alt="Add new info" width="400px"/>
